@@ -45,6 +45,46 @@ bool czynalezyplus(vector<int>tab, int a)
     return index(tab, a) > -1;
 }
 
+int suma(vector<int>tab)
+{
+    int wynik = 0;
+    for (int i = 0; i < tab.size(); i++)
+    {
+        wynik += tab[i];
+    }
+    return wynik;
+}
+
+int distance(int a, int b)
+{
+    return abs(a-b);
+}
+
+vector<int>dystansy(vector<int>tab)
+{
+    vector<int>wynik={};
+    int suma = 0;
+    for (int j = 0; j < tab.size(); j++)
+    {
+        for (int i = 0; i < tab.size(); i++)
+        {
+            suma += distance(tab[j], tab[i]);
+        }
+        wynik.push_back(suma);
+        suma = 0;
+    }
+    return wynik;
+}
+
+void wypisz(vector<int>tab)
+{
+    for (int i = 0; i < tab.size(); i++)
+    {
+        cout << tab[i] << " ";
+    }
+    cout << endl;
+}
+
 int main()
 {
     vector<int>tab = { 1,2,3,4 };
@@ -59,4 +99,11 @@ int main()
 
     cout << max(tab) << endl;
     cout << czynalezy(tab,3) << endl;
+    cout << suma(tab) << endl;
+
+    vector<int>domy = { 5,1,8,3,4,9 };
+    wypisz(domy);
+    vector<int>dystans = dystansy(domy);
+    wypisz(dystans);
+    
 }
