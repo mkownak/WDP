@@ -1,0 +1,62 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int max(vector<int>tab)
+{
+    int max = tab[0];
+    for (int i = 0; i < tab.size(); i++)
+    {
+        if (tab[i] > max)
+        {
+            max = tab[i];
+        }
+    }
+    return max;
+}
+
+bool czynalezy(vector<int>tab, int a)
+{
+    for (int i = 0; i < tab.size(); i++)
+    {
+        if (tab[i] == a)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+int index(vector<int>tab, int a)
+{
+    for (int i = 0; i < tab.size(); i++)
+    {
+        if (tab[i] == a)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+
+bool czynalezyplus(vector<int>tab, int a)
+{
+    return index(tab, a) > -1;
+}
+
+int main()
+{
+    vector<int>tab = { 1,2,3,4 };
+    tab.push_back(5);
+    tab[0] = 6;
+
+    for (int i = 0; i < tab.size(); i++)
+    {
+        cout << tab[i]<<" ";
+    }
+    cout << endl;
+
+    cout << max(tab) << endl;
+    cout << czynalezy(tab,3) << endl;
+}
