@@ -1,0 +1,7 @@
+0-Otso chodzi
+1-przyklad do zadania
+2-sprawdz czy przyklad jest kompletny
+3-zformalizowanie przykladu
+4-naglowek funkcji (typ zwracany,nazwa,parametry)
+5-instrukcja
+6-testy
